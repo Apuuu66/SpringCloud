@@ -1,0 +1,38 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+#路由走网关 默认这样 ：http://localhost:8040/eureka-client-user/users
+#zuul:
+#  routes:
+#    eureka-client-user: /user/**
+#    eureka-client-movie: /**
+#忽略所有微服务，只路由指定的微服务
+#zuul:
+#  ignored-services: '*'   # 使用'*'可忽略所有微服务
+#  routes:
+#    eureka-client-user: /user/**
+#同时指定微服务的serviceId和对应路径
+zuul:
+  routes:
+    user-route:        # 该配置方式中，user-route只是给路由一个名称，可以任意起名。
+      serviceId: eureka-client-user
+      path: /user/**              # service-id对应的路径
+
+#查看路由规则，设置debug级别
+logging:
+  level:
+    com.netflix: info
