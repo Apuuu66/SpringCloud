@@ -26,5 +26,8 @@ eureka:
   instance:
     prefer-ip-address: true
 #    instance-id: ${spring.application.name}:${eureka.instance.ip-address}:${server.port}
-
+#logging:
+#  level:
+#    org.springframework.cloud: DEBUG
+#    org.springframework.boot: DEBUG
 
