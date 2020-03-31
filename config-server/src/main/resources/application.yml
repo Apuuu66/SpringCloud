@@ -12,7 +12,7 @@ spring:
         jdbc:
           order: 0
           #key需要引号，否则mysql会报错。
-          sql: SELECT K, V from CONFIG_CENTER where APPLICATION=? and PROFILE=? and LABEL=?
+          sql: SELECT KEY1, VALUE1 from CONFIG_CENTER where APPLICATION=? and PROFILE=? and LABEL=?
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/springcloud?useUnicode=true&characterEncoding=utf8&useSSL=true&serverTimezone=UTC
