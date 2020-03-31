@@ -1,6 +1,8 @@
 package com.guier.configclient.controller;
 
 import com.guier.configclient.dao.UserRepository;
+import com.guier.configclient.pojo.User;
+import com.guier.configclient.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +13,8 @@ public class CustomController {
 
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    UserService userService;
     @Value("${spring.datasource.username}")
     public String name;
 
@@ -19,6 +23,9 @@ public class CustomController {
         System.out.println(name);
         userRepository.findById(1);
     }
-
+    @GetMapping("/t")
+    public void page() {
+        userService.page(1, 10, new User().setAge(20).setName("三"));
+    }
 
 }
