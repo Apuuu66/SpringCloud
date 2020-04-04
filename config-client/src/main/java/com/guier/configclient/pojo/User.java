@@ -1,8 +1,6 @@
 package com.guier.configclient.pojo;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import javax.persistence.Entity;
@@ -15,6 +13,8 @@ import java.util.Date;
 @Setter
 @Accessors(chain = true)
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @ToString
 public class User {
     @Id
@@ -25,3 +25,5 @@ public class User {
     Date birthday;
     String address;
 }
+
+
