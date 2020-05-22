@@ -1,26 +1,27 @@
 package com.guier.eurekaclientuser.pojo;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.Accessors;
 
-import javax.persistence.*;
-import java.math.BigDecimal;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.util.Date;
 
+@Getter
+@Setter
+@Accessors(chain = true)
 @Entity
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    @Column
-    private String username;
-    @Column
-    private String name;
-    @Column
-    private Integer age;
-    @Column
-    private BigDecimal balance;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Integer id;
+    String name;
+    Integer age;
+    Date birthday;
+    String address;
 }

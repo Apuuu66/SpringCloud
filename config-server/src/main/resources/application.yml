@@ -15,9 +15,14 @@ spring:
           sql: SELECT KEY1, VALUE1 from CONFIG_CENTER where APPLICATION=? and PROFILE=? and LABEL=?
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/springcloud?useUnicode=true&characterEncoding=utf8&useSSL=true&serverTimezone=UTC
+    url: jdbc:mysql://mysql.host:3306/springcloud?useUnicode=true&characterEncoding=utf8&useSSL=true&serverTimezone=UTC
     username: root
     password: 123456
+  flyway:
+    baseline-on-migrate: true
+    locations: classpath:/db/migration/
+    table: flyway_schema_history_${spring.application.name}
+    enabled: true
 eureka:
   client:
     service-url:
@@ -30,4 +35,3 @@ eureka:
 #  level:
 #    org.springframework.cloud: DEBUG
 #    org.springframework.boot: DEBUG
-

@@ -26,7 +26,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public Optional<User> findById(@PathVariable Long id) {
+    public Optional<User> findById(@PathVariable Integer id) {
         System.out.println(port);
         return this.userRepository.findById(id);
     }

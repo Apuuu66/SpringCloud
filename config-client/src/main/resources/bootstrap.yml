@@ -17,7 +17,7 @@ spring:
     hibernate:
       # DDL: 用于定义数据库的三级结构，包括外模式、概念模式、内模式及其相互之间的映像，定义数据的完整性、安全控制等约束
       # 例如: CREATE、ALTER、DROP、TRUNCATE 语句, DDL 不需要提交
-      ddl-auto: none  # 什么都不做
+      ddl-auto: update  # 什么都不做
       # 其他可选值
       # create: 每次运行程序时, 都会重新创建表, 故而数据会丢失
       # create-drop: 每次运行程序时会先创建表结构, 然后待程序结束时清空表
