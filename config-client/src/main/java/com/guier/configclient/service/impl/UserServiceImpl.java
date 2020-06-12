@@ -10,8 +10,12 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.criteria.*;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,5 +51,13 @@ public class UserServiceImpl implements UserService {
             }
         }, PageRequest.of(page - 1, size, Sort.by(orderList)));
         return users.getContent();
+    }
+
+    @Override
+    @Transactional
+    public void save() {
+        User user = new User().setName("www").setAge(18);
+        userRepository.save(user);
+        System.out.println(1 / 0); //此处抛出异常，事务回滚，因此save不会生效
     }
 }
