@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: springboot
+my:
+  config:
+    #di list
+    list: 1,2,3,4
+#    list:
+#      - 1
+#      - 2
+#      - 3
+#      - 4
+    #di map
+    map:
+      k1: v1
+      k2: v2
+    #di obj
+    host:
+      ip: 127.0.0.1
+      port: 8080
+    obj-list:
+      - {ip: 127.0.0.1,port: 8081}
+      - {ip: 127.0.0.1,port: 8081}
+      - {ip: 127.0.0.1,port: 8081}
+    obj-map:
+      K1: {ip: 127.0.0.1,port: 8081}
+
