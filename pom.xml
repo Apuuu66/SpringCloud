@@ -29,6 +29,7 @@
         <module>config-client</module>
         <module>godlike</module>
         <module>mq</module>
+        <module>springboot</module>
     </modules>
     <dependencies>
         <!--<dependency>-->
