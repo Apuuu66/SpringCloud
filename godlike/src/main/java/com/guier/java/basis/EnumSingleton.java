@@ -13,5 +13,3 @@ public enum EnumSingleton {
     }
 }
 
-class DBConnection {
-}

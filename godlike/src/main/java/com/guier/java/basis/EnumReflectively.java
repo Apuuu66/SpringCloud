@@ -5,8 +5,8 @@ import java.lang.reflect.Constructor;
 public class EnumReflectively {
     //拿构造方法
     public static void main(String[] args) throws Exception {
-        t1();
-        // t2();
+        // t1();
+        t2();
     }
 
     // 反射构造枚举 失败
