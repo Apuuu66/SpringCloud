@@ -28,8 +28,8 @@
         <module>config-server</module>
         <module>config-client</module>
         <module>godlike</module>
-        <module>mq</module>
         <module>springboot</module>
+        <module>sso</module>
     </modules>
     <dependencies>
         <!--<dependency>-->

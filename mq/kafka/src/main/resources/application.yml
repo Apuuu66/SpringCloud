@@ -1,6 +1,6 @@
 spring:
   kafka:
-    bootstrap-servers: virtual.host:9200
+    bootstrap-servers: virtual.host:9092
     producer:
       retries: 2
       ##批量发送数据的配置
@@ -11,10 +11,10 @@ spring:
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
       acks: 1
     consumer:
-      enable-auto-commit: false
+      enable-auto-commit: true
       auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringSerializer
-      value-deserializer: org.apache.kafka.common.serialization.StringSerializer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     listener:
-      ack-mode: manual
+#      ack-mode: manual
       concurrency: 5

@@ -1,13 +1,13 @@
-package com.guier.mq;
+package com.guier.kafka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MqApplication {
+public class KafkaApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MqApplication.class, args);
+        SpringApplication.run(KafkaApplication.class, args);
     }
 
 }
