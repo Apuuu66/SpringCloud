@@ -1,15 +1,13 @@
 package com.guier.configclient.pojo;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+// @NoArgsConstructor
+// @AllArgsConstructor
 @Entity
 @Table(name = "worker")
 public class Worker {
@@ -72,11 +70,23 @@ public class Worker {
     @Transient
     private String extraInfo;
 
+
     /**
      * 构造函数
      */
+    public Worker() {
+    }
+
     public Worker(String name, BigDecimal salary) {
         this.name = name;
         this.salary = salary;
+    }
+
+    public Worker(Long id, String type, String province, String city, String extraInfo) {
+        this.id = id;
+        this.type = type;
+        this.province = province;
+        this.city = city;
+        this.extraInfo = extraInfo;
     }
 }
