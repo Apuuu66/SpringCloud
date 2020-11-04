@@ -20,7 +20,7 @@ public class KafkaProducerService {
         future.addCallback(new ListenableFutureCallback<SendResult<String, Object>>() {
             @Override
             public void onFailure(Throwable ex) {
-                log.error("发送消息成功: {}", ex.getMessage());
+                log.error("发送消息失败: {}", ex.getMessage());
             }
 
             @Override

@@ -41,11 +41,15 @@ public class Receiver implements BeanPostProcessor {
     }
 
     // {"eventType":"serviceB-update","messageBody":"serviceB-update do do do...","createdTime":0}
-    @KafkaListener(groupId = "group01", topics = "test")
+    @KafkaListener(groupId = "group01", topics = "kafka-test")
     public void receive(ConsumerRecord<?, ?> consumerRecord) throws IOException, InvocationTargetException, IllegalAccessException {
         System.out.println(consumerRecord.value().toString());
-        EventMessage eventMessage = objectMapper.readValue(consumerRecord.value().toString(), EventMessage.class);
-        MqEventInfo mqEventInfo = map.get(eventMessage.getEventType());
-        mqEventInfo.getMethod().invoke(mqEventInfo.getClazz(), eventMessage.getMessageBody());
+        try {
+            EventMessage eventMessage = objectMapper.readValue(consumerRecord.value().toString(), EventMessage.class);
+            MqEventInfo mqEventInfo = map.get(eventMessage.getEventType());
+            mqEventInfo.getMethod().invoke(mqEventInfo.getClazz(), eventMessage.getMessageBody());
+        } catch (IOException | IllegalAccessException | IllegalArgumentException | InvocationTargetException ignored) {
+
+        }
     }
 }
