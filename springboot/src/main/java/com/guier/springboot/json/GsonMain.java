@@ -145,6 +145,8 @@ class JacksonConfig {
                 jsonGenerator.writeString("");
             }
         });
+        // 序列化类型信息
+        objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
         return objectMapper;
     }
 }
