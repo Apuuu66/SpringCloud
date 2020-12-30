@@ -1,4 +1,4 @@
-package com.guier.java.gc;
+package com.guier.java.jvm.gc;
 
 import java.util.concurrent.TimeUnit;
 

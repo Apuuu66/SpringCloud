@@ -1,4 +1,4 @@
-package com.guier.java.oom;
+package com.guier.java.jvm.oom;
 
 public class RuntimeConstantPoolOM {
     public static void main(String[] args) {

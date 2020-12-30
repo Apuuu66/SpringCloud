@@ -23,6 +23,7 @@ spring:
     locations: classpath:/db/migration/
     table: flyway_schema_history_${spring.application.name}
     enabled: true
+    baseline-version: 0
 eureka:
   client:
     service-url:

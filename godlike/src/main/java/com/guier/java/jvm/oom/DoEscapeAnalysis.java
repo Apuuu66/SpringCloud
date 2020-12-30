@@ -1,4 +1,4 @@
-package com.guier.java.oom;
+package com.guier.java.jvm.oom;
 
 public class DoEscapeAnalysis {
     /**
