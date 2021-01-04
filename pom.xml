@@ -29,7 +29,6 @@
         <module>config-client</module>
         <module>godlike</module>
         <module>springboot</module>
-        <module>sso</module>
     </modules>
     <dependencies>
         <!--<dependency>-->
